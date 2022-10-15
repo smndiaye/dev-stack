@@ -11,7 +11,13 @@ docker-compose up -d
 
 docker-compose exec dev-stack bash
 
-/opt/scripts/start.sh
+sudo -u stack -i
+
+sudo chmod -R a+rwx /opt/devstack
+
+cd /opt/devstack
+
+FORCE=yes ./stack.sh
 ```
 
 
