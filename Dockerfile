@@ -1,7 +1,9 @@
 FROM ubuntu:22.10
 
 # ubuntu setup: install necessary packages
-RUN apt update -y && \
+RUN apt update && \
+    apt -y upgrade && \
+    apt -y dist-upgrade && \
     apt install -y init && \
     apt install -y systemd && \
     apt install -y sudo locales git lsb-release iproute2 && \
